@@ -143,7 +143,7 @@ class Product(Class_Manager):
             "quantity":"number",
             'prix1':'number non_saisie',
             "seuil_de_camande":"number",
-            'relation_child':'non_field order_item:product_id',
+            'relation_child':'non_field order_item:product_id-promotions:product_id',
             "sort":"non_field prix"}
 
     def __init__(self,nom='',category_id='',prix=0,quantity=0,seuil_de_camande=0,prix1=-1):
@@ -192,7 +192,6 @@ class Promotions(Class_Manager):
             "date_fin":'date',
             "product_id": "number relation:Product<->id",
             "prix_promo": "number",
-            # 'relation_child': 'non_field order_item:product_id',
             "sort": "non_field prix_promo"}
 
     def __init__(self,date_debut=str(datetime.date.today()),date_fin=str(datetime.date.today()),product_id=0,prix_promo=0):
